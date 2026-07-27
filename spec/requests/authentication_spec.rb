@@ -55,6 +55,7 @@ RSpec.describe "Authentication", type: :request do
 
     context "when user does not exists" do
       it "does not log the user in" do
+
         post user_session_path, params: {
           user: {
             email: "unknown@example.com",
@@ -69,7 +70,8 @@ RSpec.describe "Authentication", type: :request do
   describe "GET /" do
     context "when user is not authenticated" do
       it "allow access to home page" do
-         get root_path, headers: { "Accept" => "text/html" }
+
+        get root_path, headers: { "Accept" => "text/html" }
 
         expect(response).to have_http_status(:success)
       end
@@ -85,7 +87,6 @@ RSpec.describe "Authentication", type: :request do
         sign_in user
 
         get root_path, headers: { "Accept" => "text/html" }
-
         expect(response).to have_http_status(:success)
       end
     end
