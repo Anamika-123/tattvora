@@ -55,17 +55,15 @@ RSpec.describe "Authentication", type: :request do
 
     context "when user does not exists" do
       it "does not log the user in" do
-
         post user_session_path, params: {
           user: {
-            email:"unknown@example.com",
+            email: "unknown@example.com",
             password: "Password@123"
           }
         }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
-
   end
 
   describe "GET /" do
