@@ -55,7 +55,6 @@ RSpec.describe "Authentication", type: :request do
 
     context "when user does not exists" do
       it "does not log the user in" do
-
         post user_session_path, params: {
           user: {
             email: "unknown@example.com",

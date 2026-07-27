@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   unauthenticated do
    root "home#index"
   end
-end
 
+  get "dashboard", to: "dashboard#index"
+  get "dashboard/student", to: "dashboard#student"
+  get "dashboard/teacher", to: "dashboard#teacher"
+  get "dashboard/admin", to: "dashboard#admin"
+end

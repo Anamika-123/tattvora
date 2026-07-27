@@ -81,4 +81,28 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "authorization" do
+    describe "roles" do
+      it "user has default student role" do
+        user = User.new
+        expect(user.role).to eq("student")
+      end
+
+      it "allows user to have student role" do
+        user = User.new(role: :student)
+        expect(user.student?).to be(true)
+      end
+
+      it "allows user to have teacher role" do
+        user = User.new(role: :teacher)
+        expect(user.teacher?).to be(true)
+      end
+
+      it "allows user to have an admin role" do
+        user = User.new(role: :admin)
+        expect(user.admin?).to be(true)
+      end
+    end
+  end
 end
