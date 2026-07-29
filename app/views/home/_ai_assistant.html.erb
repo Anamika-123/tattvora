@@ -1,0 +1,61 @@
+<section class="bg-white py-24">
+  <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:px-8">
+    <div class="relative order-2 lg:order-1">
+      <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#D8C6F2] via-[#E97A9D]/70 to-[#F8C9A5] p-10 shadow-2xl shadow-[#D8C6F2]/30">
+        <div class="rounded-3xl border border-white/30 bg-white/90 p-6 shadow-lg backdrop-blur">
+          <div class="flex items-center gap-3 border-b border-[#F1E6E8] pb-4">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#E97A9D] to-[#F8C9A5] text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4.5 w-4.5">
+                <path d="M12 2l2.4 5.5L20 9l-4.6 3.4L16.9 18 12 14.9 7.1 18l1.5-5.6L4 9l5.6-1.5L12 2Z" fill="currentColor"/>
+              </svg>
+            </span>
+            <div>
+              <p class="text-sm font-semibold text-[#2D2D2D]">Tattvora AI Coach</p>
+              <p class="text-xs text-[#7BBF8A]">● Coming soon</p>
+            </div>
+          </div>
+          <div class="mt-5 space-y-3">
+            <div class="max-w-[80%] rounded-2xl rounded-tl-sm bg-[#FFF9F8] px-4 py-3 text-sm text-[#2D2D2D]">
+              How is your energy feeling today?
+            </div>
+            <div class="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-gradient-to-br from-[#E97A9D] to-[#F8C9A5] px-4 py-3 text-sm text-white">
+              A little low, tough week.
+            </div>
+            <div class="max-w-[85%] rounded-2xl rounded-tl-sm bg-[#FFF9F8] px-4 py-3 text-sm text-[#2D2D2D]">
+              Let&rsquo;s shift today&rsquo;s plan to a gentle restorative flow and a grounding evening ritual.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <span class="inline-flex items-center gap-2 rounded-full border border-[#F1E6E8] bg-[#FFF9F8] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E97A9D]">
+        Coming Soon
+      </span>
+      <h2 class="mt-6 text-3xl font-bold tracking-tight text-[#2D2D2D] sm:text-4xl">
+        Meet your AI Wellness Assistant
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-[#6B7280]">
+        A calm, always-available companion that understands your rhythms, adjusts your practice in real time and gently nudges you toward balance, every single day.
+      </p>
+
+      <ul class="mt-8 space-y-4">
+        <% [
+          "Understands your mood, energy and cycle",
+          "Adapts your yoga and nutrition plan daily",
+          "Available for guidance anytime, anywhere"
+        ].each do |item| %>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#7BBF8A]/15 text-[#7BBF8A]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-3.5 w-3.5">
+                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="text-[#2D2D2D]"><%= item %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>

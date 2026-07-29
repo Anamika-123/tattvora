@@ -1,0 +1,20 @@
+<section class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+  <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#E97A9D] via-[#D8C6F2] to-[#F8C9A5] px-8 py-16 text-center shadow-2xl shadow-[#E97A9D]/25 sm:px-16 sm:py-20">
+    <div class="pointer-events-none absolute -top-16 -left-16 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-16 -right-16 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Begin your wellness journey today
+      </h2>
+      <p class="mt-4 text-lg text-white/90">
+        Join thousands of women discovering a calmer, stronger and more balanced way of living with Tattvora.
+      </p>
+
+      <div class="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <%= link_to "Get Started", new_user_registration_path, class: "inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-[#E97A9D] shadow-lg transition hover:shadow-xl" %>
+        <%= link_to "Sign In", new_user_session_path, class: "inline-flex items-center justify-center rounded-full border border-white/60 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/10" %>
+      </div>
+    </div>
+  </div>
+</section>
