@@ -86,7 +86,7 @@ RSpec.describe "Authentication", type: :request do
         sign_in user
 
         get root_path, headers: { "Accept" => "text/html" }
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:redirect)
       end
     end
   end
