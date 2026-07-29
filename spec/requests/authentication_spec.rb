@@ -69,7 +69,7 @@ RSpec.describe "Authentication", type: :request do
   describe "GET /" do
     context "when user is not authenticated" do
       it "allow access to home page" do
-        get root_path
+        get root_path, as: :html
 
         expect(response).to have_http_status(:success)
       end
@@ -84,7 +84,7 @@ RSpec.describe "Authentication", type: :request do
 
         sign_in user
 
-        get root_path
+        get root_path, as: :html
 
         expect(response).to have_http_status(:success)
       end
