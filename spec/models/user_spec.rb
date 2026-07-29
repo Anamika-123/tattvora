@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
           password: "Password@123"
         )
         expect(user).not_to be_valid
-        expect(user.errors[:email]).to include("must be a valid email address")
+        expect(user.errors[:email]).to include("is invalid")
       end
 
       it "checks email uniqueness" do
@@ -41,6 +41,15 @@ RSpec.describe User, type: :model do
         )
         expect(duplicate_user).not_to be_valid
         expect(duplicate_user.errors[:email]).to include("has already been taken")
+      end
+
+      it "downcase the email before validation" do
+        user = User.create!(
+          email: "ANAMIKA@GMAIL.COM",
+          password: "Anamika@123"
+        )
+
+        expect(user.email).to eq("anamika@gmail.com")
       end
     end
 

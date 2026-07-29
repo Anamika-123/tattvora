@@ -4,15 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_validation :downcase_email
+
   VALID_PASSWORD_REGEX =  /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d\s]).{8,}\z/
-  VALID_EMAIL_REGEX =  /\A[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}\z/
 
   validates :password,
-            presence: true,
-            format: { with: VALID_PASSWORD_REGEX,  message: "must include at least one lowercase letter, one uppercase letter, one digit, and one special character" }
+            format: { with: VALID_PASSWORD_REGEX,
+                      message: "must include at least one lowercase letter, one uppercase letter, one digit, and one special character"
+                    }, allow_nil: true
 
-  validates :email,
-            presence: true,
-            uniqueness: true,
-            format: { with: VALID_EMAIL_REGEX, message: "must be a valid email address" }
+  private
+
+  def downcase_email
+    self.email = email.downcase if email.present?
+  end
 end
