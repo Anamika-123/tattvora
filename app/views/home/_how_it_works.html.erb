@@ -1,0 +1,34 @@
+<section class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-[#E97A9D]">How It Works</span>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight text-[#2D2D2D] sm:text-4xl">
+        Three steps to a wiser wellness routine
+      </h2>
+    </div>
+
+    <div class="mt-16 flex flex-col items-stretch gap-4 lg:flex-row lg:items-center lg:gap-6">
+      <% [
+        { number: "01", title: "Complete Wellness Assessment", description: "Share your goals, lifestyle and health history through a short, thoughtful questionnaire." },
+        { number: "02", title: "Receive Personalised Program", description: "Our AI curates a plan across yoga, nutrition and Ayurveda tailored precisely to you." },
+        { number: "03", title: "Transform Your Wellness", description: "Practice, track and evolve with continuous guidance that adapts as you grow." }
+      ].each_with_index do |step, index| %>
+        <div class="flex flex-1 flex-col items-center gap-3 rounded-3xl border border-[#F1E6E8] bg-[#FFF9F8] p-8 text-center">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#E97A9D] to-[#F8C9A5] text-sm font-bold text-white shadow-md shadow-[#E97A9D]/25">
+            <%= step[:number] %>
+          </span>
+          <h3 class="mt-2 text-lg font-semibold text-[#2D2D2D]"><%= step[:title] %></h3>
+          <p class="text-sm leading-relaxed text-[#6B7280]"><%= step[:description] %></p>
+        </div>
+
+        <% unless index == 2 %>
+          <div class="flex items-center justify-center py-1 lg:rotate-[-90deg] lg:py-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-[#D8C6F2]">
+              <path d="M12 4v16m0 0l-5-5m5 5l5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

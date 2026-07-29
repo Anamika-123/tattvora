@@ -1,0 +1,24 @@
+<nav class="fixed inset-x-0 top-0 z-50 border-b border-[#F1E6E8] bg-[#FFF9F8]/70 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <%= link_to root_path, class: "flex items-center gap-2" do %>
+      <span class="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-[#E97A9D] to-[#F8C9A5] text-white shadow-md shadow-[#E97A9D]/20">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+          <path d="M12 3C12 3 7 8 7 13a5 5 0 0 0 10 0c0-5-5-10-5-10Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 21v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="text-xl font-semibold tracking-tight text-[#2D2D2D]">Tattvora</span>
+    <% end %>
+
+    <div class="hidden items-center gap-10 md:flex">
+      <a href="#programs" class="text-sm font-medium text-[#6B7280] transition hover:text-[#2D2D2D]">Programs</a>
+      <a href="#features" class="text-sm font-medium text-[#6B7280] transition hover:text-[#2D2D2D]">About</a>
+      <a href="#pricing" class="text-sm font-medium text-[#6B7280] transition hover:text-[#2D2D2D]">Pricing</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <%= link_to "Sign In", new_user_session_path, class: "hidden text-sm font-medium text-[#2D2D2D] transition hover:text-[#E97A9D] sm:block" %>
+      <%= link_to "Get Started", new_user_registration_path, class: "rounded-full bg-gradient-to-r from-[#E97A9D] to-[#F8C9A5] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#E97A9D]/25 transition hover:shadow-xl hover:shadow-[#E97A9D]/30" %>
+    </div>
+  </div>
+</nav>

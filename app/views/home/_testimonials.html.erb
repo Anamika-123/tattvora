@@ -1,0 +1,36 @@
+<section class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+  <div class="mx-auto max-w-2xl text-center">
+    <span class="text-sm font-semibold uppercase tracking-wider text-[#E97A9D]">Testimonials</span>
+    <h2 class="mt-4 text-3xl font-bold tracking-tight text-[#2D2D2D] sm:text-4xl">
+      Loved by women on their wellness journey
+    </h2>
+  </div>
+
+  <div class="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+    <% [
+      { initials: "AS", name: "Anamika Sharma", role: "Weight Loss Program", quote: "Tattvora feels like it truly understands me. The AI-guided plan adjusts to my life instead of the other way around." },
+      { initials: "RK", name: "Riya Kapoor", role: "Pregnancy Yoga", quote: "The most gentle, supportive pregnancy yoga experience I&rsquo;ve found. It feels premium yet deeply personal." },
+      { initials: "MN", name: "Meera Nair", role: "PCOS Wellness", quote: "For the first time, wellness advice feels tailored to me, not generic. My energy and balance have transformed." }
+    ].each do |t| %>
+      <div class="flex flex-col rounded-3xl border border-[#F1E6E8] bg-white p-8 shadow-sm">
+        <div class="flex gap-1 text-[#F8C9A5]">
+          <% 5.times do %>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+              <path d="M12 2l2.4 5.5L20 9l-4.6 3.4L16.9 18 12 14.9 7.1 18l1.5-5.6L4 9l5.6-1.5L12 2Z"/>
+            </svg>
+          <% end %>
+        </div>
+        <p class="mt-5 flex-1 text-[#2D2D2D]">&ldquo;<%= raw(t[:quote]) %>&rdquo;</p>
+        <div class="mt-6 flex items-center gap-3 border-t border-[#F1E6E8] pt-6">
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#E97A9D] to-[#D8C6F2] text-sm font-semibold text-white">
+            <%= t[:initials] %>
+          </span>
+          <div>
+            <p class="text-sm font-semibold text-[#2D2D2D]"><%= t[:name] %></p>
+            <p class="text-xs text-[#6B7280]"><%= t[:role] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
