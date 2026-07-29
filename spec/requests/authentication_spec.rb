@@ -69,7 +69,6 @@ RSpec.describe "Authentication", type: :request do
   describe "GET /" do
     context "when user is not authenticated" do
       it "allow access to home page" do
-
         get root_path, headers: { "Accept" => "text/html" }
 
         expect(response).to have_http_status(:success)
