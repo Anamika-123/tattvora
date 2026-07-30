@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Authentication(Devise)
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -19,5 +20,13 @@ Rails.application.routes.draw do
 
   unauthenticated do
    root "home#index"
+  end
+
+  # Dashboard
+  scope :dashboard, controller: :dashboard do
+    get "/", action: :index, as: :dashboard
+    get :student, action: :student, as: :dashboard_student
+    get :teacher, action: :teacher, as: :dashboard_teacher
+    get :admin, action: :admin, as: :dashboard_admin
   end
 end
