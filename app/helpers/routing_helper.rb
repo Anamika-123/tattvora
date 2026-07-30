@@ -1,13 +1,12 @@
 module RoutingHelper
-
   def role_base_dashboard_path(user_role)
    case user_role
-    when "student"
+   when "student"
       dashboard_student_path
-    when "teacher"
+   when "teacher"
       dashboard_teacher_path
-    when "admin"
+   when "admin"
       dashboard_admin_path
-    end
+   end
   end
 end

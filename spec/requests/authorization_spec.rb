@@ -24,14 +24,14 @@ RSpec.describe "Authorization", type: :request do
       it "redirects student user from teacher dashboard" do
         get dashboard_teacher_path
 
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(dashboard_student_path)
         expect(flash[:alert]).to eq("You are not authorized to perform this action")
       end
 
       it "redirects student user from admin dashboard" do
         get dashboard_admin_path
 
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(dashboard_student_path)
         expect(flash[:alert]).to eq("You are not authorized to perform this action")
       end
     end
@@ -58,14 +58,14 @@ RSpec.describe "Authorization", type: :request do
       it "redirects teacher user from student dashboard" do
         get dashboard_student_path
 
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(dashboard_teacher_path)
         expect(flash[:alert]).to eq("You are not authorized to perform this action")
       end
 
       it "redirects teacher user from admin dashboard" do
         get dashboard_admin_path
 
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(dashboard_teacher_path)
         expect(flash[:alert]).to eq("You are not authorized to perform this action")
       end
     end
@@ -92,14 +92,14 @@ RSpec.describe "Authorization", type: :request do
       it "redirects admin user from student dashboard" do
         get dashboard_student_path
 
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(dashboard_admin_path)
         expect(flash[:alert]).to eq("You are not authorized to perform this action")
       end
 
       it "redirects admin user from teacher dashboard" do
         get dashboard_teacher_path
 
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to redirect_to(dashboard_admin_path)
         expect(flash[:alert]).to eq("You are not authorized to perform this action")
       end
     end
