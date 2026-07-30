@@ -41,7 +41,7 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 # Use for user authentication
-gem "devise"
+gem "devise", "~> 5.0"
 
 # Use for authorization
 gem "pundit", "~> 2.5.2"
@@ -59,9 +59,9 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem "rspec-rails"
-  gem "factory_bot_rails"
-  gem "faker"
+  gem "rspec-rails", "~> 8.0"
+  gem "factory_bot_rails", "~> 6.5"
+  gem "faker", "~> 3.8"
 end
 
 group :development do
@@ -71,7 +71,9 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "shoulda-matchers"
+  gem "capybara", "~> 3.40"
+  gem "selenium-webdriver", "~> 4.44"
+  gem "shoulda-matchers", "~> 8.0"
 end
+
+gem "tailwindcss-rails", "~> 4.6"

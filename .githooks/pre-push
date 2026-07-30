@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Runs before `git push`. Blocks the push if either check fails.
+# Installed automatically by bin/setup via `git config core.hooksPath .githooks`.
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+echo "Running pre-push security checks..."
+
+echo "-> Brakeman (static analysis)..."
+if ! bundle exec brakeman --exit-on-warn --exit-on-error -q; then
+  echo "Brakeman found issues. Push aborted."
+  exit 1
+fi
+
+echo "-> bundler-audit (dependency vulnerabilities)..."
+if ! bundle exec bundler-audit check --update; then
+  echo "bundler-audit found vulnerable gems. Push aborted."
+  exit 1
+fi
+
+echo "All security checks passed."
